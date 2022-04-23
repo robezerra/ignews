@@ -2,7 +2,7 @@ import NextAuth from 'next-auth'
 import Providers from "next-auth/providers"
 import { query as q } from 'faunadb'
 
-import { faunadb } from '../../../services/faunadb'
+import { fauna } from '../../../services/fauna'
 
 export default NextAuth({
   providers: [
@@ -17,7 +17,7 @@ export default NextAuth({
       const { email } = user
 
       try {
-        await faunadb.query(
+        await fauna.query(
           q.If(
             q.Not(
               q.Exists(
