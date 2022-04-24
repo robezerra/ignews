@@ -1,5 +1,4 @@
 /* eslint-disable import/no-anonymous-default-export */
-//price_1KrBYULBbviXwZh9ZuaxsfRt
 
 import { query as q } from "faunadb";
 import { NextApiRequest, NextApiResponse } from "next";
@@ -29,10 +28,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (!customerId) {
       const stripeCustomer = await stripe.customers.create({
         email: session.user.email,
-        // metadata
       });
       await fauna.query(
-        q.Update(q.Ref(q.Collection("users"), user.ref.id), {
+        q.Update(
+          q.Ref(
+            q.Collection("users"), user.ref.id), {
           data: {
             stripe_customer_id: stripeCustomer.id,
           },
