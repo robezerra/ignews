@@ -1,0 +1,24 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "my_slice",
+    "items": [],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Aggregate synergistic experiences",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Cillum ipsum adipisicing tempor eu excepteur irure dolore eu.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]
